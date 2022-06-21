@@ -1,0 +1,18 @@
+.jumbotron-image{
+    background-image: url("../img/jumbotron.jpg");
+    background-size: cover;
+    text-align: center;
+    color: #1da994;
+}
+body{
+    background-color: #1da994;
+}
+
+div {
+    width: 100%;
+    border: black dotted;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
