@@ -34,8 +34,9 @@ $result = $query->fetchAll( PDO::FETCH_ASSOC);
 
 foreach ($result as $products) {
     echo "Id: " . $products['id'] . "<br>";
-    echo "Name: " . $products['name'] . "<br>";
+    echo "Name: " . $products['Name'] . "<br>";
     echo "description: " . $products['description'] . "<br>";
+    echo " <img class='detailImg' src=" . $products["image"] . ">";
 }
 ?>
 <a href="index.php">Terug naar de master pagina</a>
