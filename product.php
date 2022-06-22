@@ -1,29 +1,5 @@
-<?php
-
-include("dbconnection.php");
-global $db;
 
 
-$query = $db->prepare("SELECT * FROM products");
-$query->execute();
-$result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-
-echo "<table>";
-foreach ($result as $products) {
-    echo "<tr>";
-    echo "<td>";
-    echo "<a href='detail.php?id=" . $products['catagory_id'] . "'>";
-    echo $products["name"];
-    echo "<img src=" . $products["image"] . ">";
-    echo "</a>";
-    echo "</td>";
-    echo "</tr>";
-}
-echo "</table>";
-
-?>
-<a href="index.php">Terug naar de master pagina</a>
 
 <!doctype html>
 <html lang="en">
@@ -37,8 +13,38 @@ echo "</table>";
     <title>Document</title>
 </head>
 <body>
+<div class="jumbotron jumbotron-fluid jumbotron-image">
+    <div class="container">
+        <h1 class="display-4">Welkom op de producten pagina.</h1>
+    </div>
+</div>
 
+
+
+<?php
+
+include("dbconnection.php");
+global $db;
+
+$query = $db->prepare("SELECT * FROM products where catagory_id = :id");
+$query->bindParam('id', $_GET['id']);
+$query->execute();
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+echo "<div class='row'>";
+foreach ($result as $products) {
+    echo "<div class='col-12 col-sm-6 col-lg-3 p-3'>";
+    echo "<a class='text-decoration-none text-dark' href='detail.php?id=" . $products['catagory_id'] . "'>";
+    echo "<h2>" . $products["name"]. "</h2>";
+    echo "<img src=" . $products["image"] . ">";
+    echo "</a>";
+    echo "</div";
+}
+echo "</table>";
+
+?>
+<a href="index.php">Terug naar de master pagina</a>
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="css/style.css">
 </body>
 </html>

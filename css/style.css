@@ -9,10 +9,12 @@ body{
 }
 
 div {
-    width: 100%;
-    border: black dotted;
-    height: 100px;
+    width: auto;
+    /*border: black dotted;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+img{
+    width: 70%;
 }
