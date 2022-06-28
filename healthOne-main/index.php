@@ -11,7 +11,6 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="category.php">Bestellen</a></li>
-        <li><a href="#contact">Contact</a></li>
     </nav>
 </header>
 
@@ -24,31 +23,71 @@
         </div>
     </section>
     <section id="about">
+        <h2>Laat ons weten wat u van ons vind.</h2> <br>
+        <div class="section-inner">
+            <form method="post" action="">
+                <label>voornaam</label>
+                <input class="text" type="text" name="Naam"><br>
+                <br>
+                <label>review</label>
+                <input class="text" type="text" name="review"><br>
+                <br>
+
+                <input class="submit" type="submit" name="verzenden" value="Opslaan">
+            </form>
+        </div>
+    </section>
+    <section id="about">
         <div class="section-inner">
             <h2>Over ons</h2>
-            <p>Zuzu is opgericht in 1983 door Zoe Chi. sinds dien maken wij de beste sushi in Den Haag en omstreken.</p>
-            <h3>Achievements</h3>
+            <p>HealtOne is opgericht in 2022 te Den Haag. Als startende onderneming proberen wij u zo goed mogelijk te helpen</p>
+            <h3>contact</h3>
             <ul>
-                <li>sinds 2019 zijn we 3 keer op rij uitgeroepen tot de beste sushi bezorgdienst van Den Haag</li>
-                <li>In 2020 zijn al onze medewerkers BIG-geregistreerd, om uw veiligheid te verzekeren.</li>
-                <li>In 2022 hebben wij onze eerste Michelin ster mogen ontvangen.</li>
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://www.reddit.com/">Reddit</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                <li><a href="302527348@student.rocmondriaan.nl">Stuur een mail</a></li>
             </ul>
+
         </div>
     </section>
 </main>
-<footer>
-    <div class="section-inner">
-        <h2 id="contact">Contact</h2>
-        <ul>
-            <li><a href="https://twitter.com/">Twitter</a></li>
-            <li><a href="https://www.reddit.com/">Reddit</a></li>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-        </ul>
-        <p><a href="302527348@student.rocmondriaan.nl">Stuur een mail</a>.</p>
-    </div>
-</footer>
-
 <link rel="stylesheet" href="css/index.css">
 </body>
 </head>
 </html>
+
+<?php
+try {
+    $db = new PDO("mysql:host=localhost; dbname=healthone", "root", "");
+
+    if (isset($_POST['verzenden'])) {
+        $Naam = filter_input(INPUT_POST, "Naam", FILTER_SANITIZE_STRING);
+        $review = filter_input(INPUT_POST, "review", FILTER_SANITIZE_STRING);
+
+        $query = $db->prepare("INSERT INTO reviews(Naam, review)  
+                            VALUES(:Naam, :review)");
+        $query->bindParam("Naam", $Naam);
+        $query->bindParam("review", $review);
+
+        if ($result = true) {
+            session_start();
+            $_SESSION['Naam'] = $Naam;
+            $_SESSION['review'] = $review;
+        } else {
+            echo "something went wrong";
+        }
+
+        if ($query->execute()) {
+            echo "de nieuwe gegevens zijn toegevoegd";
+        } else {
+            echo "er is een fout opgetreden";
+        }
+
+        echo "<br>";
+    }
+} catch (PDOException $e) {
+    die("Error!: " . $e->getMessage());
+}
+
+?>

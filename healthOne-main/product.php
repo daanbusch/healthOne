@@ -36,7 +36,7 @@ foreach ($result as $products) {
     echo "<div class='col-12 col-sm-6 col-lg-3 p-3'>";
     echo "<a class='text-decoration-none text-dark' href='detail.php?id=" . $products['catagory_id'] . "'>";
     echo "<h2>" . $products["Name"]. "</h2>";
-    echo "<img src=" . $products["image"] . ">";
+    echo "<img src=" . $products["Image"] . ">";
     echo "</a>";
     echo "</div";
 }

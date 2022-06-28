@@ -13,25 +13,16 @@
 </head>
 <body>
 
-
 <div class="jumbotron jumbotron-fluid jumbotron-image">
     <div class="container">
         <h1 class="display-4">Sportschool HealthOne</h1>
     </div>
 </div>
 
+<nav class="navbar navbar-light" style="background-color: #1da994;">
+    <li><a href="index.php">ga terug naar de homepagina</a></li>
+</nav>
 
-
-<div class="row">
-    <div class="col-sm-8">
-        <nav class="nav justify-content-center">
-            <a href="#contact">contact</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link" href="#">Link</a>
-        </nav>
-    </div>
-    <div class="col-sm-4"></div>
-</div>
 <div class="row">
     <div class="col-sm"></div>
         <?php
@@ -50,7 +41,7 @@
             echo "<div class='col-12 col-sm-6 col-lg-3 p-3'>";
             echo "<a class='text-decoration-none text-dark' href='product.php?id=" . $catagory['id'] . "'>";
             echo "<h2>" . $catagory["Name"] . "</h2>";
-            echo  "<img src=" . $catagory["image"] . ">";
+            echo  "<img src=" . $catagory["Image"] . ">";
             echo "</a>";
             echo "</div>";
         }
@@ -60,80 +51,7 @@
     <div class="col-sm"></div>
 </div>
 
-<a id="contact">The  name where you want to jump</a>
-<footer class="bg-light text-center text-lg-start">
-    <!-- Grid container -->
-    <div class="container p-4 pb-0">
-        <form action="">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-auto mb-4 mb-md-0">
-                    <p class="pt-2">
-                        <strong>Sign up for our newsletter</strong>
-                    </p>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-5 col-12 mb-4 mb-md-0">
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="email" id="form5Example25" class="form-control" />
-                        <label class="form-label" for="form5Example25">Email address</label>
-                    </div>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-auto mb-4 mb-md-0">
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary mb-4">
-                        Subscribe
-                    </button>
-                </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
-        </form>
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-</footer>
-
 <link rel="stylesheet" href="css/style.css">
-
-<?php
-/*
-include("dbconnection.php");
-global $db;
-
-
-$query = $db->prepare("SELECT * FROM catagory");
-$query->execute();
-$result = $query->fetchAll( PDO::FETCH_ASSOC);
-
-
-echo "<table>";
-foreach ($result as $catagory) {
-    echo "<tr>";
-    echo "<td>";
-    echo "<a href='product.php?id=" . $catagory['id'] . "'>";
-    echo $catagory["Name"];
-    echo  "<img src=" . $catagory["image"] . ">";
-    echo "</a>";
-    echo "</td>";
-    echo "</tr>";
-}
-echo "</table>";
-
-*/?>
 </body>
 </html>
 
