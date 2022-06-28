@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    margin-top: 50px;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    background-color: #e3f2fd;
+}
+
+header * {
+    display: inline;
+    height: 50px;
+}
+
+header ul {
+    padding: 0;
+}
+
+header li {
+    margin-left: 20px;
+}
+
+section {
+    height: 100vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero .profile-img {
+    width: 300px;
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+    background-color: #615956;
+}
+
+#hero {
+    color: springgreen;
+    background-size: cover;
+    background-image: url("../img/sportschool.jpg");
+}
+
+#about {
+    background-image: linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)), url('https://shabushabu.nl/wp-content/uploads/2018/11/asian-chef.jpg');
+}
+
+#contact {
+    background-image: linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)), url('https://codetheweb.blog/assets/img/posts/steps-to-creating-a-website/canyon.jpg');
+}
+
+
+.sushiBody{
+    background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.0)), url('https://shabushabu.nl/wp-content/uploads/2019/01/shutterstock_129816860-1.jpg');
+    font-size: 25px;
+}
