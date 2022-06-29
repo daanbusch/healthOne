@@ -42,7 +42,7 @@ section {
 
 
 #hero {
-    color: springgreen;
+    color: rgb(238, 144, 161);
     background-size: cover;
     background-image: url("../img/sportschool.jpg");
 }
@@ -56,7 +56,4 @@ section {
 }
 
 
-.sushiBody{
-    background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.0)), url('https://shabushabu.nl/wp-content/uploads/2019/01/shutterstock_129816860-1.jpg');
-    font-size: 25px;
-}
+

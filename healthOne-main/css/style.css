@@ -2,10 +2,10 @@
     background-image: url("../img/jumbotron.jpg");
     background-size: cover;
     text-align: center;
-    color: #1da994;
+    color: rgb(238, 144, 161);
 }
-body{
-    background-color: #1da994;
+body {
+    background-image: linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)), url('https://shabushabu.nl/wp-content/uploads/2018/11/asian-chef.jpg');
 }
 
 div {

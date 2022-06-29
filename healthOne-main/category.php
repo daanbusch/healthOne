@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<nav class="navbar navbar-light" style="background-color: #1da994;">
+<nav class="navbar navbar-light" style="background-color: rgb(236,197,200);">
     <li><a href="index.php">ga terug naar de homepagina</a></li>
 </nav>
 
